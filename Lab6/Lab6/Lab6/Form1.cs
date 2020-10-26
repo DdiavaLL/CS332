@@ -100,5 +100,13 @@ namespace Lab6
                     break;
             }
         }
+
+        // Camera projection
+        private void button2_Click(object sender, EventArgs e)
+        {
+            g.Clear(Color.White);
+            if (figure != null)
+                figure.show(g, projection);
+        }
     }
 }
