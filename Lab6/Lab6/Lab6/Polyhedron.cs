@@ -120,6 +120,157 @@ namespace Lab6
             Faces.Add(f5);
 
             find_center();
-        }     
+        }
+        public void make_tetrahedron(Polyhedron cube = null)
+        {
+            if (cube == null)
+            {
+                cube = new Polyhedron();
+                cube.make_hexahedron();
+            }
+            Polygon f0 = new Polygon(
+                new List<Point3D>
+                {
+                    new Point3D(cube.Faces[0].Points[0]),
+                    new Point3D(cube.Faces[1].Points[1]),
+                    new Point3D(cube.Faces[1].Points[3])
+                }
+            );
+
+            Polygon f1 = new Polygon(
+                new List<Point3D>
+                {
+                    new Point3D(cube.Faces[1].Points[3]),
+                    new Point3D(cube.Faces[1].Points[1]),
+                    new Point3D(cube.Faces[0].Points[2])
+                }
+            );
+
+            Polygon f2 = new Polygon(
+                new List<Point3D>
+                {
+                    new Point3D(cube.Faces[0].Points[2]),
+                    new Point3D(cube.Faces[1].Points[1]),
+                    new Point3D(cube.Faces[0].Points[0])
+                }
+            );
+
+            Polygon f3 = new Polygon(
+                new List<Point3D>
+                {
+                    new Point3D(cube.Faces[0].Points[2]),
+                    new Point3D(cube.Faces[0].Points[0]),
+                    new Point3D(cube.Faces[1].Points[3])
+                }
+            );
+
+            Faces = new List<Polygon> { f0, f1, f2, f3 };
+            find_center();
+        }
+
+        public void make_octahedron(Polyhedron cube = null)
+        {
+            if (cube == null)
+            {
+                cube = new Polyhedron();
+                cube.make_hexahedron();
+            }
+
+            Polygon f0 = new Polygon(
+                new List<Point3D>
+                {
+                    new Point3D(cube.Faces[2].Center),
+                    new Point3D(cube.Faces[1].Center),
+                    new Point3D(cube.Faces[4].Center)
+                }
+            );
+
+            Polygon f1 = new Polygon(
+                new List<Point3D>
+                {
+                    new Point3D(cube.Faces[2].Center),
+                    new Point3D(cube.Faces[1].Center),
+                    new Point3D(cube.Faces[5].Center)
+                }
+            );
+
+            Polygon f2 = new Polygon(
+                new List<Point3D>
+                {
+                    new Point3D(cube.Faces[2].Center),
+                    new Point3D(cube.Faces[5].Center),
+                    new Point3D(cube.Faces[0].Center)
+                }
+            );
+
+            Polygon f3 = new Polygon(
+                new List<Point3D>
+                {
+                    new Point3D(cube.Faces[2].Center),
+                    new Point3D(cube.Faces[0].Center),
+                    new Point3D(cube.Faces[4].Center)
+                }
+            );
+
+            Polygon f4 = new Polygon(
+                new List<Point3D>
+                {
+                    new Point3D(cube.Faces[3].Center),
+                    new Point3D(cube.Faces[1].Center),
+                    new Point3D(cube.Faces[4].Center)
+                }
+            );
+
+            Polygon f5 = new Polygon(
+                new List<Point3D>
+                {
+                    new Point3D(cube.Faces[3].Center),
+                    new Point3D(cube.Faces[1].Center),
+                    new Point3D(cube.Faces[5].Center)
+                }
+            );
+
+            Polygon f6 = new Polygon(
+                new List<Point3D>
+                {
+                    new Point3D(cube.Faces[3].Center),
+                    new Point3D(cube.Faces[5].Center),
+                    new Point3D(cube.Faces[0].Center)
+                }
+            );
+
+            Polygon f7 = new Polygon(
+                new List<Point3D>
+                {
+                    new Point3D(cube.Faces[3].Center),
+                    new Point3D(cube.Faces[0].Center),
+                    new Point3D(cube.Faces[4].Center)
+                }
+            );
+
+            Faces = new List<Polygon> { f0, f1, f2, f3, f4, f5, f6, f7 };
+            find_center();
+        }
+
+        public void translate(float x, float y, float z)
+        {
+            foreach (Polygon f in Faces)
+                f.translate(x, y, z);
+            find_center();
+        }
+
+        public void rotate(double angle, Axis a, Edge line = null)
+        {
+            foreach (Polygon f in Faces)
+                f.rotate(angle, a, line);
+            find_center();
+        }
+
+        public void scale(float kx, float ky, float kz)
+        {
+            foreach (Polygon f in Faces)
+                f.scale(kx, ky, kz);
+            find_center();
+        }
     }
 }

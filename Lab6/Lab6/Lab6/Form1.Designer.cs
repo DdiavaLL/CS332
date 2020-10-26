@@ -77,6 +77,7 @@
             this.numericUpDown15 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown16 = new System.Windows.Forms.NumericUpDown();
             this.button4 = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
@@ -110,9 +111,7 @@
             this.comboBox1.Items.AddRange(new object[] {
             "Тетраэдр",
             "Гексаэдр",
-            "Октаэдр",
-            "Икосаэдр",
-            "Додекаэдр"});
+            "Октаэдр"});
             this.comboBox1.Location = new System.Drawing.Point(907, 28);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
@@ -177,6 +176,11 @@
             // numericUpDown1
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(931, 73);
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
             this.numericUpDown1.TabIndex = 8;
@@ -184,6 +188,11 @@
             // numericUpDown2
             // 
             this.numericUpDown2.Location = new System.Drawing.Point(931, 100);
+            this.numericUpDown2.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(120, 20);
             this.numericUpDown2.TabIndex = 9;
@@ -191,6 +200,11 @@
             // numericUpDown3
             // 
             this.numericUpDown3.Location = new System.Drawing.Point(931, 127);
+            this.numericUpDown3.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
             this.numericUpDown3.Name = "numericUpDown3";
             this.numericUpDown3.Size = new System.Drawing.Size(120, 20);
             this.numericUpDown3.TabIndex = 10;
@@ -320,6 +334,12 @@
             // 
             // numericUpDown7
             // 
+            this.numericUpDown7.DecimalPlaces = 1;
+            this.numericUpDown7.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
             this.numericUpDown7.Location = new System.Drawing.Point(953, 273);
             this.numericUpDown7.Maximum = new decimal(new int[] {
             2,
@@ -329,9 +349,20 @@
             this.numericUpDown7.Name = "numericUpDown7";
             this.numericUpDown7.Size = new System.Drawing.Size(98, 20);
             this.numericUpDown7.TabIndex = 22;
+            this.numericUpDown7.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // numericUpDown8
             // 
+            this.numericUpDown8.DecimalPlaces = 1;
+            this.numericUpDown8.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
             this.numericUpDown8.Location = new System.Drawing.Point(953, 300);
             this.numericUpDown8.Maximum = new decimal(new int[] {
             2,
@@ -341,9 +372,20 @@
             this.numericUpDown8.Name = "numericUpDown8";
             this.numericUpDown8.Size = new System.Drawing.Size(98, 20);
             this.numericUpDown8.TabIndex = 23;
+            this.numericUpDown8.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // numericUpDown9
             // 
+            this.numericUpDown9.DecimalPlaces = 1;
+            this.numericUpDown9.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
             this.numericUpDown9.Location = new System.Drawing.Point(953, 327);
             this.numericUpDown9.Maximum = new decimal(new int[] {
             2,
@@ -353,6 +395,11 @@
             this.numericUpDown9.Name = "numericUpDown9";
             this.numericUpDown9.Size = new System.Drawing.Size(98, 20);
             this.numericUpDown9.TabIndex = 24;
+            this.numericUpDown9.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label14
             // 
@@ -568,11 +615,22 @@
             this.button4.Text = "Повернуть";
             this.button4.UseVisualStyleBackColor = true;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(720, 300);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(136, 17);
+            this.checkBox1.TabIndex = 49;
+            this.checkBox1.Text = "Относительно центра";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1055, 703);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.numericUpDown16);
             this.Controls.Add(this.numericUpDown15);
@@ -697,6 +755,7 @@
         private System.Windows.Forms.NumericUpDown numericUpDown15;
         private System.Windows.Forms.NumericUpDown numericUpDown16;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 

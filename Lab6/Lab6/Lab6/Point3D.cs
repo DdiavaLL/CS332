@@ -160,5 +160,71 @@ namespace Lab6
                 }
             return c;
         }
+
+        public void translate(float x, float y, float z)
+        {
+            List<float> T = new List<float> { 1, 0, 0, 0,
+                                              0, 1, 0, 0,
+                                              0, 0, 1, 0,
+                                              x, y, z, 1 };
+            List<float> xyz = new List<float> { X, Y, Z, 1 };
+            List<float> c = mul_matrix(xyz, 1, 4, T, 4, 4);
+
+            X = c[0];
+            Y = c[1];
+            Z = c[2];
+        }
+
+        public void rotate(double angle, Axis a, Edge line = null)
+        {
+            double rangle = Math.PI * angle / 180;
+
+            List<float> R = null;
+
+            float sin = (float)Math.Sin(rangle);
+            float cos = (float)Math.Cos(rangle);
+            switch (a)
+            {
+                case Axis.AXIS_X:
+                    R = new List<float> { 1,   0,     0,   0,
+                                          0,  cos,   -sin,  0,
+                                          0,  sin,  cos,  0,
+                                          0,   0,     0,   1 };
+                    break;
+                case Axis.AXIS_Y:
+                    R = new List<float> { cos,  0,  sin,  0,
+                                           0,   1,   0,    0,
+                                          -sin,  0,  cos,   0,
+                                           0,   0,   0,    1 };
+                    break;
+                case Axis.AXIS_Z:
+                    R = new List<float> { cos,   -sin,  0,  0,
+                                          sin,  cos,  0,  0,
+                                           0,     0,   1,  0,
+                                           0,     0,   0,  1 };
+                    break;
+
+            }
+            List<float> xyz = new List<float> { X, Y, Z, 1 };
+            List<float> c = mul_matrix(xyz, 1, 4, R, 4, 4);
+
+            X = c[0];
+            Y = c[1];
+            Z = c[2];
+        }
+
+        public void scale(float kx, float ky, float kz)
+        {
+            List<float> D = new List<float> { kx, 0,  0,  0,
+                                              0,  ky, 0,  0,
+                                              0,  0,  kz, 0,
+                                              0,  0,  0,  1 };
+            List<float> xyz = new List<float> { X, Y, Z, 1 };
+            List<float> c = mul_matrix(xyz, 1, 4, D, 4, 4);
+
+            X = c[0];
+            Y = c[1];
+
+        }
     }
 }

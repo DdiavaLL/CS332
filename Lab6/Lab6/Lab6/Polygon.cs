@@ -114,5 +114,26 @@ namespace Lab6
             else if (pts.Count == 1)
                 g.DrawRectangle(pen, pts[0].X, pts[0].Y, 1, 1);
         }
+
+        public void translate(float x, float y, float z)
+        {
+            foreach (Point3D p in Points)
+                p.translate(x, y, z);
+            find_center();
+        }
+
+        public void rotate(double angle, Axis a, Edge line = null)
+        {
+            foreach (Point3D p in Points)
+                p.rotate(angle, a, line);
+            find_center();
+        }
+
+        public void scale(float kx, float ky, float kz)
+        {
+            foreach (Point3D p in Points)
+                p.scale(kx, ky, kz);
+            find_center();
+        }
     }
 }

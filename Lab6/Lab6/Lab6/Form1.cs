@@ -29,7 +29,46 @@ namespace Lab6
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (figure == null)
+            {
+                MessageBox.Show("Неодбходимо выбрать фигуру!", "Ошибка!", MessageBoxButtons.OK);
+            }
+            else
+            {
+                //TRANSLATE
+                int offsetX = (int)numericUpDown1.Value, offsetY = (int)numericUpDown2.Value, offsetZ = (int)numericUpDown3.Value;
+                figure.translate(offsetX, offsetY, offsetZ);
 
+                //ROTATE
+                int rotateAngleX = (int)numericUpDown4.Value;
+                figure.rotate(rotateAngleX, 0);
+
+                int rotateAngleY = (int)numericUpDown5.Value;
+                figure.rotate(rotateAngleY, Axis.AXIS_Y);
+
+                int rotateAngleZ = (int)numericUpDown6.Value;
+                figure.rotate(rotateAngleZ, Axis.AXIS_Z);
+
+                //SCALE
+                if (checkBox1.Checked)
+                {
+                    float old_x = figure.Center.X, old_y = figure.Center.Y, old_z = figure.Center.Z;
+                    figure.translate(-old_x, -old_y, -old_z);
+
+                    float kx = (float)numericUpDown7.Value, ky = (float)numericUpDown8.Value, kz = (float)numericUpDown9.Value;
+                    figure.scale(kx, ky, kz);
+
+                    figure.translate(old_x, old_y, old_z);
+                }
+                else
+                {
+                    float kx = (float)numericUpDown7.Value, ky = (float)numericUpDown8.Value, kz = (float)numericUpDown9.Value;
+                    figure.scale(kx, ky, kz);
+                }
+            }
+
+            g.Clear(Color.White);
+            figure.show(g, projection);
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -37,12 +76,24 @@ namespace Lab6
             switch (comboBox1.SelectedIndex)
             {
                 case 0:
+                    //Tetrahedron
+                    g.Clear(Color.White);
+                    figure = new Polyhedron();
+                    figure.make_tetrahedron();
+                    figure.show(g, projection);
                     break;
                 case 1:
                     //Hexahedron
                     g.Clear(Color.White);
                     figure = new Polyhedron();
                     figure.make_hexahedron();
+                    figure.show(g, projection);
+                    break;
+                case 2:
+                    //Oktahedron
+                    g.Clear(Color.White);
+                    figure = new Polyhedron();
+                    figure.make_octahedron();
                     figure.show(g, projection);
                     break;
                 default:
