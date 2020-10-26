@@ -108,5 +108,7 @@ namespace Lab6
             if (figure != null)
                 figure.show(g, projection);
         }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e) => projection = (Projection)comboBox2.SelectedIndex;
     }
 }
