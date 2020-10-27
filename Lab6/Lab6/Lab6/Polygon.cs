@@ -47,6 +47,29 @@ namespace Lab6
             Center.Z /= Points.Count;
         }
 
+        /*----------------------------- Отражения -----------------------------*/
+        public void reflectX()
+        {
+            Center.X = -Center.X;
+            if (Points != null)
+                foreach (var p in Points)
+                    p.reflectX();
+        }
+        public void reflectY()
+        {
+            Center.Y = -Center.Y;
+            if (Points != null)
+                foreach (var p in Points)
+                    p.reflectY();
+        }
+        public void reflectZ()
+        {
+            Center.Z = -Center.Z;
+            if (Points != null)
+                foreach (var p in Points)
+                    p.reflectZ();
+        }
+
         public List<PointF> make_perspective(float k = 1000, float z_camera = 1000)
         {
             List<PointF> res = new List<PointF>();
