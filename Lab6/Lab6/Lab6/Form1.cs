@@ -104,7 +104,8 @@ namespace Lab6
             }
         }
 
-        //Проекция
+        // Camera projection
+
         private void button2_Click(object sender, EventArgs e)
         {
             g.Clear(Color.White);
@@ -178,5 +179,6 @@ namespace Lab6
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e) => revertId = comboBox3.SelectedIndex;
         
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e) => projection = (Projection)comboBox2.SelectedIndex;
     }
 }
