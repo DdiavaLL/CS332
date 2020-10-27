@@ -48,6 +48,31 @@ namespace Lab6
                 f.show(g, pr, pen);
         }
 
+        /*----------------------------- Отражения -----------------------------*/
+        public void reflectX()
+        {
+            if (Faces != null)
+                foreach (var f in Faces)
+                    f.reflectX();
+            find_center();
+        }
+
+        public void reflectY()
+        {
+            if (Faces != null)
+                foreach (var f in Faces)
+                    f.reflectY();
+            find_center();
+        }
+
+        public void reflectZ()
+        {
+            if (Faces != null)
+                foreach (var f in Faces)
+                    f.reflectZ();
+            find_center();
+        }
+
         public void make_hexahedron(float cube_half_size = 50)
         {
             Polygon f = new Polygon(

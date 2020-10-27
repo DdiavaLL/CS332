@@ -20,6 +20,8 @@ namespace Lab6
             Z = z;
         }
 
+
+        /*----------------------------- Отражения -----------------------------*/
         public Point3D(Point3D p)
         {
             X = p.X;
@@ -202,6 +204,19 @@ namespace Lab6
                                           sin,  cos,  0,  0,
                                            0,     0,   1,  0,
                                            0,     0,   0,  1 };
+                    break;
+                case Axis.OTHER:
+                    float l = Math.Sign(line.Second.X - line.First.X);
+                    float m = Math.Sign(line.Second.Y - line.First.Y);
+                    float n = Math.Sign(line.Second.Z - line.First.Z);
+                    float length = (float)Math.Sqrt(l * l + m * m + n * n);
+                    l /= length; m /= length; n /= length;
+
+                    R = new List<float> {  l * l + cos * (1 - l * l),   l * (1 - cos) * m + n * sin,   l * (1 - cos) * n - m * sin,  0,
+                                          l * (1 - cos) * m - n * sin,   m * m + cos * (1 - m * m),    m * (1 - cos) * n + l * sin,  0,
+                                          l * (1 - cos) * n + m * sin,  m * (1 - cos) * n - l * sin,    n * n + cos * (1 - n * n),   0,
+                                                       0,                            0,                             0,               1 };
+
                     break;
 
             }
