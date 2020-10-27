@@ -277,6 +277,173 @@ namespace Lab6
             find_center();
         }
 
+        public void make_icosahedron()
+        {
+            Faces = new List<Polygon>();
+
+            float size = 100;
+
+            float r1 = size * (float)Math.Sqrt(3) / 4;   // половина высоты правильного треугольника - для высоты цилиндра
+            float r = size * (3 + (float)Math.Sqrt(5)) / (4 * (float)Math.Sqrt(3)); // радиус вписанной сферы - для правильных пятиугольников
+
+            Point3D up_center = new Point3D(0, -r1, 0);  // центр верхней окружности
+            Point3D down_center = new Point3D(0, r1, 0); // центр нижней окружности
+
+            double a = Math.PI / 2;
+            List<Point3D> up_points = new List<Point3D>();
+            for (int i = 0; i < 5; ++i)
+            {
+                up_points.Add(new Point3D(up_center.X + r * (float)Math.Cos(a), up_center.Y, up_center.Z - r * (float)Math.Sin(a)));
+                a += 2 * Math.PI / 5;
+            }
+
+            a = Math.PI / 2 - Math.PI / 5;
+            List<Point3D> down_points = new List<Point3D>();
+            for (int i = 0; i < 5; ++i)
+            {
+                down_points.Add(new Point3D(down_center.X + r * (float)Math.Cos(a), down_center.Y, down_center.Z - r * (float)Math.Sin(a)));
+                a += 2 * Math.PI / 5;
+            }
+
+            var R = Math.Sqrt(2 * (5 + Math.Sqrt(5))) * size / 4;
+
+            Point3D p_up = new Point3D(up_center.X, (float)(-R), up_center.Z);
+            Point3D p_down = new Point3D(down_center.X, (float)R, down_center.Z);
+
+            for (int i = 0; i < 5; ++i)
+            {
+                Faces.Add(
+                    new Polygon(new List<Point3D>
+                    {
+                        new Point3D(p_up),
+                        new Point3D(up_points[i]),
+                        new Point3D(up_points[(i+1) % 5]),
+                    })
+                    );
+            }
+
+            for (int i = 0; i < 5; ++i)
+            {
+                Faces.Add(
+                    new Polygon(new List<Point3D>
+                    {
+                        new Point3D(p_down),
+                        new Point3D(down_points[i]),
+                        new Point3D(down_points[(i+1) % 5]),
+                    })
+                    );
+            }
+
+            for (int i = 0; i < 5; ++i)
+            {
+                Faces.Add(
+                    new Polygon(new List<Point3D>
+                    {
+                        new Point3D(up_points[i]),
+                        new Point3D(up_points[(i+1) % 5]),
+                        new Point3D(down_points[(i+1) % 5])
+                    })
+                    );
+
+                Faces.Add(
+                    new Polygon(new List<Point3D>
+                    {
+                        new Point3D(up_points[i]),
+                        new Point3D(down_points[i]),
+                        new Point3D(down_points[(i+1) % 5])
+                    })
+                    );
+            }
+
+            find_center();
+        }
+
+        public void make_dodecahedron()
+        {
+            Faces = new List<Polygon>();
+            Polyhedron ik = new Polyhedron();
+            ik.make_icosahedron();
+
+            List<Point3D> pts = new List<Point3D>();
+            foreach (Polygon f in ik.Faces)
+            {
+                pts.Add(f.Center);
+            }
+
+            Faces.Add(new Polygon(new List<Point3D>
+            {
+                new Point3D(pts[0]),
+                new Point3D(pts[1]),
+                new Point3D(pts[2]),
+                new Point3D(pts[3]),
+                new Point3D(pts[4])
+            }));
+
+            Faces.Add(new Polygon(new List<Point3D>
+            {
+                new Point3D(pts[5]),
+                new Point3D(pts[6]),
+                new Point3D(pts[7]),
+                new Point3D(pts[8]),
+                new Point3D(pts[9])
+            }));
+
+            for (int i = 0; i < 5; ++i)
+            {
+                Faces.Add(new Polygon(new List<Point3D>
+                {
+                    new Point3D(pts[i]),
+                    new Point3D(pts[(i + 1) % 5]),
+                    new Point3D(pts[(i == 4) ? 10 : 2*i + 12]),
+                    new Point3D(pts[(i == 4) ? 11 : 2*i + 13]),
+                    new Point3D(pts[2*i + 10])
+                }));
+            }
+
+            Faces.Add(new Polygon(new List<Point3D>
+            {
+                new Point3D(pts[5]),
+                new Point3D(pts[6]),
+                new Point3D(pts[13]),
+                new Point3D(pts[10]),
+                new Point3D(pts[11])
+            }));
+            Faces.Add(new Polygon(new List<Point3D>
+            {
+                new Point3D(pts[6]),
+                new Point3D(pts[7]),
+                new Point3D(pts[15]),
+                new Point3D(pts[12]),
+                new Point3D(pts[13])
+            }));
+            Faces.Add(new Polygon(new List<Point3D>
+            {
+                new Point3D(pts[7]),
+                new Point3D(pts[8]),
+                new Point3D(pts[17]),
+                new Point3D(pts[14]),
+                new Point3D(pts[15])
+            }));
+            Faces.Add(new Polygon(new List<Point3D>
+            {
+                new Point3D(pts[8]),
+                new Point3D(pts[9]),
+                new Point3D(pts[19]),
+                new Point3D(pts[16]),
+                new Point3D(pts[17])
+            }));
+            Faces.Add(new Polygon(new List<Point3D>
+            {
+                new Point3D(pts[9]),
+                new Point3D(pts[5]),
+                new Point3D(pts[11]),
+                new Point3D(pts[18]),
+                new Point3D(pts[19])
+            }));
+
+            find_center();
+        }
+
         public void translate(float x, float y, float z)
         {
             foreach (Polygon f in Faces)
