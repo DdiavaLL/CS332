@@ -432,6 +432,7 @@
             this.button2.TabIndex = 27;
             this.button2.Text = "Изменить проекцию";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label15
             // 
@@ -451,8 +452,9 @@
             "Относительно плоскости ZX"});
             this.comboBox3.Location = new System.Drawing.Point(841, 454);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
+            this.comboBox3.Size = new System.Drawing.Size(187, 21);
             this.comboBox3.TabIndex = 29;
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
             // button3
             // 
@@ -462,11 +464,12 @@
             this.button3.TabIndex = 30;
             this.button3.Text = "Отразить";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(725, 529);
+            this.label16.Location = new System.Drawing.Point(746, 516);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(183, 13);
             this.label16.TabIndex = 31;
@@ -480,10 +483,11 @@
             "Прямая, параллельная оси OY",
             "Прямая, параллельная оси OZ",
             "Произвольная прямая"});
-            this.comboBox4.Location = new System.Drawing.Point(930, 529);
+            this.comboBox4.Location = new System.Drawing.Point(713, 532);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 21);
+            this.comboBox4.Size = new System.Drawing.Size(249, 21);
             this.comboBox4.TabIndex = 32;
+            this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
             // 
             // label17
             // 
@@ -591,6 +595,11 @@
             this.numericUpDown14.Name = "numericUpDown14";
             this.numericUpDown14.Size = new System.Drawing.Size(41, 20);
             this.numericUpDown14.TabIndex = 45;
+            this.numericUpDown14.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // numericUpDown15
             // 
@@ -598,6 +607,11 @@
             this.numericUpDown15.Name = "numericUpDown15";
             this.numericUpDown15.Size = new System.Drawing.Size(40, 20);
             this.numericUpDown15.TabIndex = 46;
+            this.numericUpDown15.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // numericUpDown16
             // 
@@ -605,6 +619,11 @@
             this.numericUpDown16.Name = "numericUpDown16";
             this.numericUpDown16.Size = new System.Drawing.Size(39, 20);
             this.numericUpDown16.TabIndex = 47;
+            this.numericUpDown16.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // button4
             // 
@@ -614,6 +633,7 @@
             this.button4.TabIndex = 48;
             this.button4.Text = "Повернуть";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // checkBox1
             // 

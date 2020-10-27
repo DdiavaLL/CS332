@@ -17,7 +17,10 @@ namespace Lab6
     {
         Graphics g;
         Projection projection = 0;
+        Axis rotateLineMode = 0;
         Polyhedron figure = null;
+        int revertId = -1;
+
 
         public Form1()
         {
@@ -100,5 +103,80 @@ namespace Lab6
                     break;
             }
         }
+
+        //Проекция
+        private void button2_Click(object sender, EventArgs e)
+        {
+            g.Clear(Color.White);
+            if (figure != null)
+                figure.show(g, projection);
+        }
+
+        //Поворот вокруг прямой
+        private void button4_Click(object sender, EventArgs e) => RotateAroundLine();
+
+        private void RotateAroundLine()
+        {
+            Edge rotateLine = new Edge(
+                                new Point3D(
+                                    (float)numericUpDown11.Value,
+                                    (float)numericUpDown12.Value,
+                                    (float)numericUpDown13.Value),
+                                new Point3D(
+                                    (float)numericUpDown14.Value,
+                                    (float)numericUpDown15.Value,
+                                    (float)numericUpDown16.Value));
+
+            float Ax = rotateLine.First.X, Ay = rotateLine.First.Y, Az = rotateLine.First.Z;
+            figure.translate(-Ax, -Ay, -Az);
+
+            double angle = (double)numericUpDown10.Value;
+            figure.rotate(angle, rotateLineMode, rotateLine);
+
+            figure.translate(Ax, Ay, Az);
+
+            g.Clear(Color.White);
+            figure.show(g, projection);
+        }
+
+        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            rotateLineMode = (Axis)comboBox4.SelectedIndex;
+            if (comboBox4.SelectedIndex != 4)
+            {
+                numericUpDown11.Enabled = false; 
+                numericUpDown12.Enabled = false;
+                numericUpDown13.Enabled = false;
+                numericUpDown14.Enabled = false;
+                numericUpDown15.Enabled = false;
+                numericUpDown16.Enabled = false;
+            }
+        }
+
+        // Отражение относительно плоскостей
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (revertId == 0)
+            {
+                figure.reflectX();
+                g.Clear(Color.White);
+                figure.show(g, projection);
+            }
+            else if (revertId == 1)
+            {
+                figure.reflectY();
+                g.Clear(Color.White);
+                figure.show(g, projection);
+            }
+            else if (revertId == 2)
+            {
+                figure.reflectZ();
+                g.Clear(Color.White);
+                figure.show(g, projection);
+            }
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e) => revertId = comboBox3.SelectedIndex;
+        
     }
 }
