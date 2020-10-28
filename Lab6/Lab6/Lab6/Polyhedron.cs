@@ -283,11 +283,11 @@ namespace Lab6
 
             float size = 100;
 
-            float r1 = size * (float)Math.Sqrt(3) / 4;   // половина высоты правильного треугольника - для высоты цилиндра
-            float r = size * (3 + (float)Math.Sqrt(5)) / (4 * (float)Math.Sqrt(3)); // радиус вписанной сферы - для правильных пятиугольников
+            float r1 = size * (float)Math.Sqrt(3) / 4;  
+            float r = size * (3 + (float)Math.Sqrt(5)) / (4 * (float)Math.Sqrt(3));
 
-            Point3D up_center = new Point3D(0, -r1, 0);  // центр верхней окружности
-            Point3D down_center = new Point3D(0, r1, 0); // центр нижней окружности
+            Point3D up_center = new Point3D(0, -r1, 0);
+            Point3D down_center = new Point3D(0, r1, 0);
 
             double a = Math.PI / 2;
             List<Point3D> up_points = new List<Point3D>();
