@@ -10,6 +10,8 @@ using System.Windows.Forms;
 
 namespace Lab7
 {
+    public enum Axis { AXIS_X, AXIS_Y, AXIS_Z, LINE };
+    public enum Projection { PERSPECTIVE = 0, ISOMETRIC, ORTHOGR_X, ORTHOGR_Y, ORTHOGR_Z };
     public partial class Form1 : Form
     {
         public Form1()
