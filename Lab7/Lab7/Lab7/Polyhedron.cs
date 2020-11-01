@@ -24,6 +24,21 @@ namespace Lab7
             Center = new Point3D(polyhedron.Center);
         }
 
+        public Polyhedron(string s)
+        {
+            Polygons = new List<Polygon>();
+
+            var arr = s.Split('\n');
+
+            for (int i = 0; i < arr.Length; ++i)
+            {
+                if (string.IsNullOrEmpty(arr[i]))
+                    continue;
+                Polygon f = new Polygon(arr[i]);
+                Polygons.Add(f);
+            }
+            UpdateCenter();
+        }
         private void UpdateCenter()
         {
             Center.X = 0;
@@ -456,6 +471,21 @@ namespace Lab7
             }));
 
             UpdateCenter();
+        }
+        public string Save()
+        {
+            string res = "";
+            foreach (var poly in Polygons)
+            {
+                foreach (var point in poly.Points)
+                {
+                    res += Math.Truncate(point.X) + " ";
+                    res += Math.Truncate(point.Y) + " ";
+                    res += Math.Truncate(point.Z) + " ";
+                }
+                res += '\n';
+            }
+            return res;
         }
     }
 }
