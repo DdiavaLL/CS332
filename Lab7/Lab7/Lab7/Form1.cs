@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Lab7
@@ -178,7 +175,11 @@ namespace Lab7
 
         private void button8_Click(object sender, EventArgs e)
         {
-
+            Graph Graph = new Graph((int)numericUpDown18.Value, (int)numericUpDown20.Value, (int)numericUpDown19.Value,
+                (int)numericUpDown21.Value, (int)numericUpDown22.Value, comboBox6.SelectedIndex);
+            figure = Graph;
+            g.Clear(Color.White);
+            Graph.Show(g, 0);
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -205,6 +206,24 @@ namespace Lab7
                 text = figure.Save();
             }
             System.IO.File.WriteAllText(filename, text);
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e) => projection = (Projection)comboBox2.SelectedIndex;
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e) => revertId = comboBox3.SelectedIndex;
+
+        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            rotateLineMode = (Axis)comboBox4.SelectedIndex;
+            if (comboBox4.SelectedIndex != 4)
+            {
+                numericUpDown11.Enabled = false;
+                numericUpDown12.Enabled = false;
+                numericUpDown13.Enabled = false;
+                numericUpDown14.Enabled = false;
+                numericUpDown15.Enabled = false;
+                numericUpDown16.Enabled = false;
+            }
         }
     }
 }
