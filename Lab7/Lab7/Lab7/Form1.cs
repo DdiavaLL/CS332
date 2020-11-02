@@ -81,13 +81,8 @@ namespace Lab7
                                     (float)numericUpDown15.Value,
                                     (float)numericUpDown16.Value));
 
-            float Ax = rotateLine.First.X, Ay = rotateLine.First.Y, Az = rotateLine.First.Z;
-            figure.Translate(-Ax, -Ay, -Az);
-
-            double angle = (double)numericUpDown10.Value;
+            double angle = (double)numericUpDown16.Value;
             figure.Rotate(angle, rotateLineMode, rotateLine);
-
-            figure.Translate(Ax, Ay, Az);
 
             g.Clear(Color.White);
             figure.Show(g, projection);
@@ -95,9 +90,41 @@ namespace Lab7
 
         private void button4_Click(object sender, EventArgs e) => RotateAroundLine();
 
+        //ROTATION FIGURE
         private void button7_Click(object sender, EventArgs e)
         {
+            List<Point3D> points = new List<Point3D>();
+            var lines = textBox1.Text.Split('\n');
 
+            foreach (var p in lines)
+            {
+                var arr = ((string)p).Split(',');
+                points.Add(new Point3D(float.Parse(arr[0]), float.Parse(arr[1]), float.Parse(arr[2])));
+            }
+
+            Axis axis = 0;
+            switch (comboBox5.SelectedItem.ToString())
+            {
+                case "OX":
+                    axis = 0;
+                    break;
+                case "OY":
+                    axis = Axis.AXIS_Y;
+                    break;
+                case "OZ":
+                    axis = Axis.AXIS_Z;
+                    break;
+                default:
+                    axis = 0;
+                    break;
+            }
+
+            RotationFigure rotateFigure = new RotationFigure(points, axis, (int)numericUpDown17.Value);
+
+            figure = rotateFigure;
+
+            g.Clear(Color.White);
+            rotateFigure.Show(g, 0);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -215,14 +242,14 @@ namespace Lab7
         private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
             rotateLineMode = (Axis)comboBox4.SelectedIndex;
-            if (comboBox4.SelectedIndex != 4)
+            if (comboBox4.SelectedIndex != 3)
             {
+                numericUpDown10.Enabled = false;
                 numericUpDown11.Enabled = false;
                 numericUpDown12.Enabled = false;
                 numericUpDown13.Enabled = false;
                 numericUpDown14.Enabled = false;
                 numericUpDown15.Enabled = false;
-                numericUpDown16.Enabled = false;
             }
         }
     }
