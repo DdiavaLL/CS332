@@ -44,6 +44,9 @@ namespace Lab7
                 case 3:
                     F = (x, y) => (float)Math.Sin(x) * 5f;
                     break;
+                case 4:
+                    F = (x, y) => x + (y * y);
+                    break;
                 default:
                     F = (x, y) => x + y;
                     break;

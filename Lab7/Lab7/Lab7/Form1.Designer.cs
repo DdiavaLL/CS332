@@ -187,7 +187,8 @@
             "x + y",
             "x^2 + y^2",
             "3Sin(x) * 3Cos(Y)",
-            "5*Sin(x)"});
+            "5*Sin(x)",
+            "x + y^2"});
             this.comboBox6.Location = new System.Drawing.Point(1074, 458);
             this.comboBox6.Name = "comboBox6";
             this.comboBox6.Size = new System.Drawing.Size(173, 21);
