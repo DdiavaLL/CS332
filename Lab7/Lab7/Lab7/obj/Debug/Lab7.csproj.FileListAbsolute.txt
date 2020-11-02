@@ -1,0 +1,30 @@
+C:\Users\1\Documents\Компьютерная графика\gitALL\Lab7\Lab7\Lab7\bin\Debug\Lab7.exe.config
+C:\Users\1\Documents\Компьютерная графика\gitALL\Lab7\Lab7\Lab7\bin\Debug\Lab7.exe
+C:\Users\1\Documents\Компьютерная графика\gitALL\Lab7\Lab7\Lab7\bin\Debug\Lab7.pdb
+C:\Users\1\Documents\Компьютерная графика\gitALL\Lab7\Lab7\Lab7\obj\Debug\Lab7.csprojAssemblyReference.cache
+C:\Users\1\Documents\Компьютерная графика\gitALL\Lab7\Lab7\Lab7\obj\Debug\Lab7.Form1.resources
+C:\Users\1\Documents\Компьютерная графика\gitALL\Lab7\Lab7\Lab7\obj\Debug\Lab7.Properties.Resources.resources
+C:\Users\1\Documents\Компьютерная графика\gitALL\Lab7\Lab7\Lab7\obj\Debug\Lab7.csproj.GenerateResource.cache
+C:\Users\1\Documents\Компьютерная графика\gitALL\Lab7\Lab7\Lab7\obj\Debug\Lab7.csproj.CoreCompileInputs.cache
+C:\Users\1\Documents\Компьютерная графика\gitALL\Lab7\Lab7\Lab7\obj\Debug\Lab7.exe
+C:\Users\1\Documents\Компьютерная графика\gitALL\Lab7\Lab7\Lab7\obj\Debug\Lab7.pdb
+D:\UNIVER\4sem1\ComuterGraphics\CS332\Lab7\Lab7\Lab7\bin\Debug\Lab7.exe.config
+D:\UNIVER\4sem1\ComuterGraphics\CS332\Lab7\Lab7\Lab7\bin\Debug\Lab7.exe
+D:\UNIVER\4sem1\ComuterGraphics\CS332\Lab7\Lab7\Lab7\bin\Debug\Lab7.pdb
+D:\UNIVER\4sem1\ComuterGraphics\CS332\Lab7\Lab7\Lab7\obj\Debug\Lab7.csprojAssemblyReference.cache
+D:\UNIVER\4sem1\ComuterGraphics\CS332\Lab7\Lab7\Lab7\obj\Debug\Lab7.Form1.resources
+D:\UNIVER\4sem1\ComuterGraphics\CS332\Lab7\Lab7\Lab7\obj\Debug\Lab7.Properties.Resources.resources
+D:\UNIVER\4sem1\ComuterGraphics\CS332\Lab7\Lab7\Lab7\obj\Debug\Lab7.csproj.GenerateResource.cache
+D:\UNIVER\4sem1\ComuterGraphics\CS332\Lab7\Lab7\Lab7\obj\Debug\Lab7.csproj.CoreCompileInputs.cache
+D:\UNIVER\4sem1\ComuterGraphics\CS332\Lab7\Lab7\Lab7\obj\Debug\Lab7.exe
+D:\UNIVER\4sem1\ComuterGraphics\CS332\Lab7\Lab7\Lab7\obj\Debug\Lab7.pdb
+C:\Users\luspa\Desktop\Компьютерная графика\My\CS332\Lab7\Lab7\Lab7\bin\Debug\Lab7.exe.config
+C:\Users\luspa\Desktop\Компьютерная графика\My\CS332\Lab7\Lab7\Lab7\bin\Debug\Lab7.exe
+C:\Users\luspa\Desktop\Компьютерная графика\My\CS332\Lab7\Lab7\Lab7\bin\Debug\Lab7.pdb
+C:\Users\luspa\Desktop\Компьютерная графика\My\CS332\Lab7\Lab7\Lab7\obj\Debug\Lab7.csprojAssemblyReference.cache
+C:\Users\luspa\Desktop\Компьютерная графика\My\CS332\Lab7\Lab7\Lab7\obj\Debug\Lab7.Form1.resources
+C:\Users\luspa\Desktop\Компьютерная графика\My\CS332\Lab7\Lab7\Lab7\obj\Debug\Lab7.Properties.Resources.resources
+C:\Users\luspa\Desktop\Компьютерная графика\My\CS332\Lab7\Lab7\Lab7\obj\Debug\Lab7.csproj.GenerateResource.cache
+C:\Users\luspa\Desktop\Компьютерная графика\My\CS332\Lab7\Lab7\Lab7\obj\Debug\Lab7.csproj.CoreCompileInputs.cache
+C:\Users\luspa\Desktop\Компьютерная графика\My\CS332\Lab7\Lab7\Lab7\obj\Debug\Lab7.exe
+C:\Users\luspa\Desktop\Компьютерная графика\My\CS332\Lab7\Lab7\Lab7\obj\Debug\Lab7.pdb

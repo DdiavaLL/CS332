@@ -99,6 +99,20 @@ namespace Lab6
                     figure.make_octahedron();
                     figure.show(g, projection);
                     break;
+                case 3:
+                    //Icosahedron
+                    g.Clear(Color.White);
+                    figure = new Polyhedron();
+                    figure.make_icosahedron();
+                    figure.show(g, projection);
+                    break;
+                case 4:
+                    //Dodecahedron
+                    g.Clear(Color.White);
+                    figure = new Polyhedron();
+                    figure.make_dodecahedron();
+                    figure.show(g, projection);
+                    break;
                 default:
                     break;
             }
