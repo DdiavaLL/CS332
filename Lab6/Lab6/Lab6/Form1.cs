@@ -128,13 +128,8 @@ namespace Lab6
                                     (float)numericUpDown15.Value,
                                     (float)numericUpDown16.Value));
 
-            float Ax = rotateLine.First.X, Ay = rotateLine.First.Y, Az = rotateLine.First.Z;
-            figure.translate(-Ax, -Ay, -Az);
-
             double angle = (double)numericUpDown10.Value;
-            figure.rotate(angle, rotateLineMode, rotateLine);
-
-            figure.translate(Ax, Ay, Az);
+            figure.rotate(angle, rotateLineMode,rotateLine);
 
             g.Clear(Color.White);
             figure.show(g, projection);
@@ -143,14 +138,23 @@ namespace Lab6
         private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
             rotateLineMode = (Axis)comboBox4.SelectedIndex;
-            if (comboBox4.SelectedIndex != 4)
+            if (comboBox4.SelectedIndex != 3)
             {
-                numericUpDown11.Enabled = false; 
+                numericUpDown11.Enabled = false;
                 numericUpDown12.Enabled = false;
                 numericUpDown13.Enabled = false;
                 numericUpDown14.Enabled = false;
                 numericUpDown15.Enabled = false;
                 numericUpDown16.Enabled = false;
+            }
+            else
+            {
+                numericUpDown11.Enabled = true;
+                numericUpDown12.Enabled = true;
+                numericUpDown13.Enabled = true;
+                numericUpDown14.Enabled = true;
+                numericUpDown15.Enabled = true;
+                numericUpDown16.Enabled = true;
             }
         }
 
