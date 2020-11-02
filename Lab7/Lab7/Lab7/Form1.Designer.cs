@@ -178,7 +178,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(154, 122);
             this.textBox1.TabIndex = 141;
-            this.textBox1.Text = "0,0,0\r\n100,100,100";
+            this.textBox1.Text = "0,0,0\r\n0,100,0\r\n100,100,0\r\n100,0,0";
             // 
             // comboBox6
             // 
