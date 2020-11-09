@@ -618,7 +618,6 @@ namespace Lab8
                 x_left = x012;
                 x_right = x02;
 
-
                 h_left = h012;
                 h_right = h02;
             }
@@ -630,20 +629,13 @@ namespace Lab8
                 int x_r = x_right[y - y0];
                 int[] h_segment;
 
-                if (x_l > x_r)
-                {
-                    continue;
-                }
-                else
-                    h_segment = Interpolate(x_l, h_left[y - y0], x_r, h_right[y - y0]);
+                h_segment = Interpolate(x_l, h_left[y - y0], x_r, h_right[y - y0]);
                 for (int x = x_l; x <= x_r; ++x)
                 {
                     int z = h_segment[x - x_l];
 
                     int xx = x + width / 2;
                     int yy = -y + height / 2;
-                    if (xx < 0 || xx > width || yy < 0 || yy > height || (xx * height + yy) < 0 || (xx * height + yy) > (buff.Length - 1))
-                        continue;
                     if (z > buff[xx * height + yy])
                     {
                         buff[xx * height + yy] = (int)(z);
