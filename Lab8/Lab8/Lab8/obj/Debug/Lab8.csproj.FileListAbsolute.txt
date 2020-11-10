@@ -1,0 +1,30 @@
+D:\UNIVER\4sem1\ComuterGraphics\CS332\Lab8\Lab8\Lab8\bin\Debug\Lab8.exe.config
+D:\UNIVER\4sem1\ComuterGraphics\CS332\Lab8\Lab8\Lab8\bin\Debug\Lab8.exe
+D:\UNIVER\4sem1\ComuterGraphics\CS332\Lab8\Lab8\Lab8\bin\Debug\Lab8.pdb
+D:\UNIVER\4sem1\ComuterGraphics\CS332\Lab8\Lab8\Lab8\obj\Debug\Lab8.csprojAssemblyReference.cache
+D:\UNIVER\4sem1\ComuterGraphics\CS332\Lab8\Lab8\Lab8\obj\Debug\Lab8.Form1.resources
+D:\UNIVER\4sem1\ComuterGraphics\CS332\Lab8\Lab8\Lab8\obj\Debug\Lab8.Properties.Resources.resources
+D:\UNIVER\4sem1\ComuterGraphics\CS332\Lab8\Lab8\Lab8\obj\Debug\Lab8.csproj.GenerateResource.cache
+D:\UNIVER\4sem1\ComuterGraphics\CS332\Lab8\Lab8\Lab8\obj\Debug\Lab8.csproj.CoreCompileInputs.cache
+D:\UNIVER\4sem1\ComuterGraphics\CS332\Lab8\Lab8\Lab8\obj\Debug\Lab8.exe
+D:\UNIVER\4sem1\ComuterGraphics\CS332\Lab8\Lab8\Lab8\obj\Debug\Lab8.pdb
+C:\Users\1\Documents\Компьютерная графика\gitAll\Lab8\Lab8\Lab8\obj\Debug\Lab8.csprojAssemblyReference.cache
+C:\Users\1\Documents\Компьютерная графика\gitAll\Lab8\Lab8\Lab8\obj\Debug\Lab8.Form1.resources
+C:\Users\1\Documents\Компьютерная графика\gitAll\Lab8\Lab8\Lab8\obj\Debug\Lab8.Properties.Resources.resources
+C:\Users\1\Documents\Компьютерная графика\gitAll\Lab8\Lab8\Lab8\obj\Debug\Lab8.csproj.GenerateResource.cache
+C:\Users\1\Documents\Компьютерная графика\gitAll\Lab8\Lab8\Lab8\obj\Debug\Lab8.csproj.CoreCompileInputs.cache
+C:\Users\1\Documents\Компьютерная графика\gitAll\Lab8\Lab8\Lab8\obj\Debug\Lab8.exe
+C:\Users\1\Documents\Компьютерная графика\gitAll\Lab8\Lab8\Lab8\obj\Debug\Lab8.pdb
+C:\Users\1\Documents\Компьютерная графика\gitAll\Lab8\Lab8\Lab8\bin\Debug\Lab8.exe.config
+C:\Users\1\Documents\Компьютерная графика\gitAll\Lab8\Lab8\Lab8\bin\Debug\Lab8.exe
+C:\Users\1\Documents\Компьютерная графика\gitAll\Lab8\Lab8\Lab8\bin\Debug\Lab8.pdb
+C:\Users\Tyzyhyan.L\Desktop\Учеба\Компьютерная графика\My\CS332\Lab8\Lab8\Lab8\bin\Debug\Lab8.exe.config
+C:\Users\Tyzyhyan.L\Desktop\Учеба\Компьютерная графика\My\CS332\Lab8\Lab8\Lab8\bin\Debug\Lab8.exe
+C:\Users\Tyzyhyan.L\Desktop\Учеба\Компьютерная графика\My\CS332\Lab8\Lab8\Lab8\bin\Debug\Lab8.pdb
+C:\Users\Tyzyhyan.L\Desktop\Учеба\Компьютерная графика\My\CS332\Lab8\Lab8\Lab8\obj\Debug\Lab8.csprojAssemblyReference.cache
+C:\Users\Tyzyhyan.L\Desktop\Учеба\Компьютерная графика\My\CS332\Lab8\Lab8\Lab8\obj\Debug\Lab8.Form1.resources
+C:\Users\Tyzyhyan.L\Desktop\Учеба\Компьютерная графика\My\CS332\Lab8\Lab8\Lab8\obj\Debug\Lab8.Properties.Resources.resources
+C:\Users\Tyzyhyan.L\Desktop\Учеба\Компьютерная графика\My\CS332\Lab8\Lab8\Lab8\obj\Debug\Lab8.csproj.GenerateResource.cache
+C:\Users\Tyzyhyan.L\Desktop\Учеба\Компьютерная графика\My\CS332\Lab8\Lab8\Lab8\obj\Debug\Lab8.csproj.CoreCompileInputs.cache
+C:\Users\Tyzyhyan.L\Desktop\Учеба\Компьютерная графика\My\CS332\Lab8\Lab8\Lab8\obj\Debug\Lab8.exe
+C:\Users\Tyzyhyan.L\Desktop\Учеба\Компьютерная графика\My\CS332\Lab8\Lab8\Lab8\obj\Debug\Lab8.pdb

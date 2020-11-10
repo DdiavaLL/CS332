@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lab7
+namespace Lab8
 {
-    class Graph:Polyhedron
+    class Graph : Polyhedron
     {
         public Func<double, double, double> F;
         public int X0 { get; }
