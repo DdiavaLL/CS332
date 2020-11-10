@@ -23,6 +23,7 @@ namespace Lab7
                 rotatedPoints.Add(new Point3D(p.X, p.Y, p.Z));
             }
 
+            //Добавляем ребра
             for (int i = 0; i < count; ++i)
             {
                 foreach (var p in rotatedPoints)
@@ -45,9 +46,6 @@ namespace Lab7
                 foreach (var p in startPoints)
                     p.rotate(angle, axis);
             }
-
-
-            
         }
 
         public new void Show(Graphics g, Projection pr = 0, Pen pen = null)

@@ -60,7 +60,11 @@ namespace Lab8
         public void Show(Graphics g, Projection pr = 0, Pen pen = null)
         {
             foreach (Polygon f in Polygons)
-                f.Show(g, pr, pen);
+            {
+                f.FindNormal(Center, new Edge(new Point3D(0, 0, 500), new Point3D(0, 0, 500)));
+                if (f.IsVisible)
+                    f.Show(g, pr, pen);
+            }
         }
 
         public void Translate(float x, float y, float z)
