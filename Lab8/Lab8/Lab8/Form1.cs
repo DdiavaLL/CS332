@@ -22,6 +22,8 @@ namespace Lab8
         Axis rotateLineMode = 0;
         Clipping clipping = 0;
 
+        Camera camera = new Camera(50, 50);
+
         public Form1()
         {
             InitializeComponent();
@@ -273,6 +275,50 @@ namespace Lab8
             if (clipping == 0)
                 rotateFigure.Show(g, 0);
             else
+                show_z_buff();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (figure == null)
+            {
+                MessageBox.Show("Сначала создайте фигуру", "Нет фигуры", MessageBoxButtons.OK);
+            }
+            else
+            {
+                int dx = (int)numericUpDown22.Value,
+                        dy = (int)numericUpDown21.Value,
+                        dz = (int)numericUpDown20.Value;
+                figure.Translate(-dx, -dy, -dz);
+
+                camera.translate(dx, dy, dz);
+
+                float old_x_camera = figure.Center.X,
+                        old_y_camera = figure.Center.Y,
+                        old_z_camera = figure.Center.Z;
+
+                camera.translate(-old_x_camera, -old_y_camera, -old_z_camera);
+
+                double angleOX = (int)numericUpDown19.Value;
+                figure.Rotate(-angleOX, Axis.AXIS_X);
+                camera.rotate(angleOX, Axis.AXIS_X);
+
+                double angleOY = (int)numericUpDown18.Value;
+                figure.Rotate(-angleOY, Axis.AXIS_Y);
+                camera.rotate(angleOY, Axis.AXIS_Y);
+
+                double angleOZ = (int)numericUpDown17.Value;
+                figure.Rotate(-angleOZ, Axis.AXIS_Z);
+                camera.rotate(angleOZ, Axis.AXIS_Z);
+
+                camera.translate(old_x_camera, old_y_camera, old_z_camera);
+            }
+
+            g.Clear(Color.White);
+
+            camera.show(g, projection);
+            figure.Show(g, projection);
+            if (clipping != 0)
                 show_z_buff();
         }
     }
