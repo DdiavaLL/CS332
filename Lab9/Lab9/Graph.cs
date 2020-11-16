@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lab8
+namespace Lab9
 {
     class Graph : Polyhedron
     {

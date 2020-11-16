@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Drawing;
 
-namespace Lab8
+namespace Lab9
 {
     class RotationFigure : Polyhedron
     {

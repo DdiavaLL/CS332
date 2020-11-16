@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 
-namespace Lab8
+namespace Lab9
 {
     class Polygon
     {
@@ -174,7 +174,7 @@ namespace Lab8
         //NORMAL VECTOR
         public void FindNormal(Point3D pCenter, Edge camera)
         {
-            Point3D first = Points[0], second = Points[1], third = Points[2];
+            /*Point3D first = Points[0], second = Points[1], third = Points[2];
             var A = first.Y * (second.Z - third.Z) + second.Y * (third.Z - first.Z) + third.Y * (first.Z - second.Z);
             var B = first.Z * (second.X - third.X) + second.Z * (third.X - first.X) + third.Z * (first.X - second.X);
             var C = first.X * (second.Y - third.Y) + second.X * (third.Y - first.Y) + third.X * (first.Y - second.Y);
@@ -196,7 +196,23 @@ namespace Lab8
                 Math.Sqrt(E.X * E.X + E.Y * E.Y + E.Z * E.Z))));
             angle = angle * 180 / Math.PI;
 
-            IsVisible = angle >= 90;
+            IsVisible = angle >= 90;*/
+            Point3D first = Points[0], second = Points[1], third = Points[2];
+            var A = first.Y * (second.Z - third.Z) + second.Y * (third.Z - first.Z) + third.Y * (first.Z - second.Z);
+            var B = first.Z * (second.X - third.X) + second.Z * (third.X - first.X) + third.Z * (first.X - second.X);
+            var C = first.X * (second.Y - third.Y) + second.X * (third.Y - first.Y) + third.X * (first.Y - second.Y);
+
+            Normal = new List<float> { A, B, C }; // Вектор нормали
+
+            Point3D P = camera.First; //направление
+            Point3D E = new Point3D(P.X - Center.X, P.Y - Center.Y, P.Z - Center.Z); //вектор проекции
+            var scalar = Normal[0] * E.X + Normal[1] * E.Y + Normal[2] * E.Z; //скалярное произведение
+            var prodLength = Math.Sqrt(Normal[0] * Normal[0] + Normal[1] * Normal[1] + Normal[2] * Normal[2]) * Math.Sqrt(E.X * E.X + E.Y * E.Y + E.Z * E.Z); //произведение длинн векторов
+            double angle = Math.Acos(scalar / prodLength); //угол  
+
+            angle = angle * 180 / Math.PI;
+
+            IsVisible = scalar > 0;
         }
     }
 }
